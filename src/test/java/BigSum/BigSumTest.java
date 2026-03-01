@@ -68,6 +68,11 @@ public class BigSumTest {
     }
 
     @Test
+    public void given_1_plus_99_returns_100() {
+        assertEquals("100", BigSum.add("1", "99"));
+    }
+
+    @Test
     public void given_99_plus_1_returns_100() {
         assertEquals("100", BigSum.add("99", "1"));
     }
