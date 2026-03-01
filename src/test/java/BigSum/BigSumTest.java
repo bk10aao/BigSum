@@ -137,14 +137,4 @@ public class BigSumTest {
         assertEquals("45", BigSum.multiply("5", "9"));
         assertEquals("0", BigSum.multiply("0", "999999"));
     }
-//
-//    @Test
-//    public void testy() {
-//        assertEquals("0", BigSum.subtract("2", "2"));
-//    }
-//
-//    @Test
-//    public void testyyyy() {
-//        assertEquals("1", BigSum.subtract("3", "2"));
-//    }
 }
