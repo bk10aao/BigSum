@@ -3,8 +3,7 @@ package BigSum;
 public class BigSum {
 
     public static String add(final String first, final String second) {
-        if(!first.matches("\\d+") || !second.matches("\\d+"))
-            throw new IllegalArgumentException();
+        validate(first, second);
         StringBuilder result = new StringBuilder();
         int i = first.length() - 1;
         int j = second.length() - 1;
@@ -22,12 +21,9 @@ public class BigSum {
     }
 
     public static String multiply(String first, String second) {
-        if (!first.matches("\\d+") || !second.matches("\\d+"))
-            throw new IllegalArgumentException();
+        validate(first, second);
         if (first.equals("0") || second.equals("0"))
             return "0";
-        if(first.length() == 1 && second.length() == 1)
-            return multiply(first, Integer.parseInt(second));
         String result = "0";
         for(int i = second.length() - 1; i >= 0; i--) {
             int number = second.charAt(i) - '0';
@@ -53,5 +49,10 @@ public class BigSum {
             carry /= 10;
         }
         return stringBuilder.reverse().toString();
+    }
+
+    private static void validate(String first, String second) {
+        if(!first.matches("\\d+") || !second.matches("\\d+"))
+            throw new IllegalArgumentException();
     }
 }

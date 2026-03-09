@@ -8,17 +8,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class BigSumTest {
 
     @Test
-    public void given_abc_def_throws_IllegalArgumentException() {
+    public void given_abc_def_on_add_throws_IllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> BigSum.add("abc", "def"));
     }
 
     @Test
-    public void given_abc_123_throws_IllegalArgumentException() {
+    public void given_abc_123_on_add_throws_IllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> BigSum.add("abc", "123"));
     }
 
     @Test
-    public void given_123_abc_throws_IllegalArgumentException() {
+    public void given_123_abc_on_add_IllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> BigSum.add("123", "abc"));
     }
 
@@ -75,6 +75,21 @@ public class BigSumTest {
     @Test
     public void given_99_plus_1_returns_100() {
         assertEquals("100", BigSum.add("99", "1"));
+    }
+
+    @Test
+    public void given_abc_def_on_multiply_throws_IllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> BigSum.multiply("abc", "def"));
+    }
+
+    @Test
+    public void given_abc_123_on_multiply_throws_IllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> BigSum.multiply("abc", "123"));
+    }
+
+    @Test
+    public void given_123_abc_on_multiply_IllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> BigSum.multiply("123", "abc"));
     }
 
     @Test
